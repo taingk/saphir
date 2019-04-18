@@ -48,6 +48,3 @@ services:
     labels:
       - "traefik.frontend.rule=Host:traefik.myproject.test"
       - "traefik.port=8080"
-
-volumes:
-  db-data: {}
