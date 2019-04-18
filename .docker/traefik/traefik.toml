@@ -149,10 +149,10 @@
 ################################################################
 
 # Information about developers
-[forge-hr]
-email = "lharang.pro@gmail.com"
+[myproject]
+email = "youremail@email.com"
 
 # Set custom domains
-[[forge-hr.domains]]
-  main = "kare-kaisu.test"
-  sans = ["api.kare-kaisu.test", "srv.kare-kaisu.test"]
+[[myproject.domains]]
+  main = "myproject.test"
+  sans = ["api.myproject.test", "traefik.myproject.test"]
