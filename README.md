@@ -12,10 +12,20 @@ docker-compose build
 
 **run**
 ```
-docker-compose up
+make run
 ```
 
-**start**
+**Start**
 ```
-docker-compose up -d
+make up
+```
+
+**Install front packages**
+```
+make install
+```
+
+**Clean front packages**
+```
+make clean-front
 ```
