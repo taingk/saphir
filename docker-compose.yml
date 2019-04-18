@@ -2,6 +2,7 @@ version: '3'
 
 services:
   db:
+    container_name: database
     image: postgres
     volumes:
       - .docker/db:/var/lib/postgresql/data
