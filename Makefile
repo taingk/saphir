@@ -9,6 +9,7 @@ run:
 
 install:
 	cd front && yarn install
+	docker exec -it ruby-api bundle install
 
 create-db:
 	docker-compose run ruby rake db:create
