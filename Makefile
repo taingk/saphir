@@ -10,6 +10,18 @@ run:
 install:
 	cd front && yarn install
 
+create-db:
+	docker-compose run ruby rake db:create
+
+migrate-db:
+	docker-compose run ruby rake db:migrate
+
+drop-db:
+	docker-compose run ruby rake db:drop
+
+bash:
+	docker exec -it ruby-api bash
+
 clean-front:
 	cd front && \
 	rm yarn.lock && \
