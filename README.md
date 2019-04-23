@@ -1,4 +1,4 @@
-# Ruby On Rails x Reactjs x Traefik Docker dev env
+# Ruby On Rails x Vuejs x Traefik Docker dev env
 
 ## Getting started :
 
