@@ -23,17 +23,17 @@ services:
           - db
 
   front:
-    container_name: react-front
+    container_name: vue-front
     image: node:lts-alpine
     working_dir: /home/myproject/front
     volumes:
       - ./front:/home/myproject/front
     ports:
-      - "7000:3000"
+      - "7000:8080"
     labels:
       - "traefik.frontend.rule=Host:myproject.test"
       - "traefik.port=8080"
-    command: ["yarn", "start"]
+    command: ["yarn", "serve"]
 
   traefik:
     container_name: traefik
