@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::API
+<<<<<<< HEAD
     include ActionController::Helpers
 <<<<<<< HEAD
     check_authorization
@@ -21,4 +22,7 @@ class ApplicationController < ActionController::API
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
     end
     
+=======
+    include ExcpetionHandler
+>>>>>>> Authentication classes, to be tested
 end
