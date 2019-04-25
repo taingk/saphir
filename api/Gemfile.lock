@@ -166,7 +166,12 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
 <<<<<<< HEAD
+<<<<<<< HEAD
   cancancan
+=======
+  dotenv-rails
+  jwt
+>>>>>>> Authentication classes, to be tested
 =======
   dotenv-rails
   jwt

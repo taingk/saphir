@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+<<<<<<< HEAD
   before_action :set_user, only: [:show, :update, :destroy]
 
   # GET /users
@@ -49,6 +50,8 @@ class UsersController < ApplicationController
       params.require(:user).permit(:pseudo, :email, :password)
     end
 end
+=======
+>>>>>>> Authentication classes, to be tested
 
     def login
         auth_object = Authentication.new(login_params)
@@ -67,4 +70,8 @@ end
     def login_params
         params.permit(:username, :password)
     end
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> Authentication classes, to be tested
