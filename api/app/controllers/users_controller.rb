@@ -49,8 +49,6 @@ class UsersController < ApplicationController
       params.require(:user).permit(:pseudo, :email, :password_digest)
     end
 
-end
-
     def login
         auth_object = Authentication.new(login_params)
         if auth_object.authenticate

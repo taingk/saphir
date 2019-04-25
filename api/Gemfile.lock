@@ -69,7 +69,10 @@ GEM
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
 <<<<<<< HEAD
+<<<<<<< HEAD
     jsonapi-renderer (0.2.0)
+=======
+>>>>>>> Authentication classes, to be tested
 =======
 >>>>>>> Authentication classes, to be tested
     jwt (2.1.0)
@@ -172,7 +175,10 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
 <<<<<<< HEAD
+<<<<<<< HEAD
   cancancan
+=======
+>>>>>>> Authentication classes, to be tested
 =======
 >>>>>>> Authentication classes, to be tested
   dotenv-rails
