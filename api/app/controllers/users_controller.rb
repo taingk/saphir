@@ -49,3 +49,22 @@ class UsersController < ApplicationController
       params.require(:user).permit(:pseudo, :email, :password)
     end
 end
+
+    def login
+        auth_object = Authentication.new(login_params)
+        if auth_object.authenticate
+            render json: {
+                message: "Connexion réussie!", token:
+            auth_object.generate_token }, status: ok
+        else
+            render json: {
+                message: "Identifiant ou mot de passe incorrect"}, status: :unauthorized
+        end
+    end
+
+    private
+
+    def login_params
+        params.permit(:username, :password)
+    end
+end
