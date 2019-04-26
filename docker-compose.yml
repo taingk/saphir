@@ -16,7 +16,9 @@ services:
       - "traefik.port=3000"
   front:
     container_name: vue-front
-    image: node:lts-alpine
+    build:
+      context: .
+      dockerfile: .docker/front/Dockerfile
     working_dir: /home/myproject/front
     volumes:
       - ./front:/home/myproject/front
