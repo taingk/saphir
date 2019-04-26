@@ -1,11 +1,6 @@
 version: '3.7'
 
 services:
-  db:
-    container_name: database
-    image: postgres
-    volumes:
-      - .docker/db:/var/lib/postgresql/data
   ruby:
     container_name: ruby-api
     build:
@@ -19,9 +14,6 @@ services:
     labels:
       - "traefik.frontend.rule=Host:api.myproject.test"
       - "traefik.port=3000"
-    depends_on:
-          - db
-
   front:
     container_name: vue-front
     image: node:lts-alpine
@@ -34,7 +26,6 @@ services:
       - "traefik.frontend.rule=Host:myproject.test"
       - "traefik.port=8080"
     command: ["yarn", "serve"]
-
   traefik:
     container_name: traefik
     image: traefik:latest
