@@ -16,9 +16,7 @@ services:
       - "traefik.port=3000"
   front:
     container_name: vue-front
-    build:
-      context: .
-      dockerfile: .docker/front/Dockerfile
+    image: node:lts-alpine
     working_dir: /home/myproject/front
     volumes:
       - ./front:/home/myproject/front
@@ -27,7 +25,7 @@ services:
     labels:
       - "traefik.frontend.rule=Host:myproject.test"
       - "traefik.port=8080"
-    command: ["yarn", "serve"]
+    command: /bin/sh -c "[ -d node_modules ] && echo "up-to-date" || yarn && yarn serve"
   traefik:
     container_name: traefik
     image: traefik:latest
