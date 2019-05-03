@@ -3,17 +3,12 @@ version: '3.7'
 services:
   ruby:
     container_name: ruby-api
-    build:
-      context: .
-      dockerfile: .docker/ruby/Dockerfile
+    build: .
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - ./api:/api
     ports:
       - "3000:3000"
-    volumes:
-      - ./api:/webapp
-    labels:
-      - "traefik.frontend.rule=Host:api.myproject.test"
-      - "traefik.port=3000"
   front:
     container_name: vue-front
     image: node:lts-alpine
@@ -22,21 +17,4 @@ services:
       - ./front:/home/myproject/front
     ports:
       - "7000:8080"
-    labels:
-      - "traefik.frontend.rule=Host:myproject.test"
-      - "traefik.port=8080"
     command: /bin/sh -c "[ -d node_modules ] && echo "up-to-date" || yarn && yarn serve"
-  traefik:
-    container_name: traefik
-    image: traefik:latest
-    command: --api --docker
-    ports:
-      - "80:80"
-      - "443:443"
-      - "18080:8080"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./.docker/traefik/traefik.toml:/etc/traefik/traefik.toml:ro
-    labels:
-      - "traefik.frontend.rule=Host:traefik.myproject.test"
-      - "traefik.port=7000"

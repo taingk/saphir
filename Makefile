@@ -1,16 +1,14 @@
 up:
-	[ -f api/tmp/pids/server.pid ] && rm api/tmp/pids/server.pid || echo "File does not exist"
 	docker-compose up -d --build
 
 down:
 	docker-compose down
 
 run:
-	[ -f api/tmp/pids/server.pid ] && rm api/tmp/pids/server.pid || echo "File does not exist"
 	docker-compose up --build
 
 install:
-	cd front && docker exec vue-front yarn install
+	docker exec vue-front yarn install
 	docker exec ruby-api bundle install
 
 create-db:
