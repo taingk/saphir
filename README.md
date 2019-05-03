@@ -2,14 +2,6 @@
 
 ## Getting started :
 
-To fully use the dev env, you need a unix env (in order to use traefik)
-
-**Build**
-```
-docker-compose build
-```
-or 
-
 **run**
 ```
 make run
@@ -17,22 +9,20 @@ make run
 
 **Congrats ! Your app is running**
 
-Front : myproject.test (port = 7000)
+Front : localhost:7000
 
-Back : api.myproject.test (back = 3000)
+Back : localhost:3000
 
-*You can change the urls in the docker-compose.yml & in .docker/traefik/traefik.toml*
-
-
+*You can change the urls in the docker-compose.yml*
 
 ## Others commands :
 
-**Start**
+**Start with daemon**
 ```
 make up
 ```
 
-**Install front packages**
+**Install back/front packages**
 ```
 make install
 ```
@@ -57,7 +47,7 @@ make migrate-db
 make drop-db
 ```
 
-**Bash for ruby  API**
+**Bash for ruby API**
 ```
 make bash
 ```
