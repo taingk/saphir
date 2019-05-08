@@ -10,11 +10,11 @@ services:
     ports:
       - "3000:3000"
   front:
-    container_name: vue-front
+    container_name: react-front
     image: node:lts-alpine
-    working_dir: /home/myproject/front
+    working_dir: /front
     volumes:
-      - ./front:/home/myproject/front
+      - ./front:/front
     ports:
-      - "7000:8080"
-    command: /bin/sh -c "[ -d node_modules ] && echo "up-to-date" || yarn && yarn serve"
+      - "7000:3000"
+    command: /bin/sh -c "[ -d node_modules ] && echo "up-to-date" || yarn && yarn start"

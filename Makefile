@@ -8,7 +8,7 @@ run:
 	docker-compose up --build
 
 install:
-	docker exec vue-front yarn install
+	docker exec react-front yarn install
 	docker exec ruby-api bundle install
 
 create-db:
@@ -27,7 +27,4 @@ clean-front:
 	cd front && \
 	rm yarn.lock && \
 	rm -rf node_modules && \
-	docker exec vue-front yarn install
-
-restart-vue:
-	docker restart vue-front
+	docker exec react-front yarn install
