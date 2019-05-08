@@ -1,6 +1,5 @@
 import React from 'react';
-import Wysiwyg from './components/Wysiwyg';
 
-const App = () => <Wysiwyg />;
+const App = () => <h1>Index</h1>;
 
 export default App;
