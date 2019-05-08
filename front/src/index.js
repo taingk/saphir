@@ -18,13 +18,13 @@ const AppRouter = () => (
             <Link to="/articles">Articles</Link>
           </li>
           <li>
-            <Link to="/article/new">New article</Link>
+            <Link to="/new/article">New article</Link>
           </li>
         </ul>
       </nav>
       <Route path="/" exact component={Home} />
       <Route path="/articles" component={Articles} />
-      <Route path="/article/new" component={NewArticle} />
+      <Route path="/new/article" component={NewArticle} />
     </div>
   </Router>
 );
