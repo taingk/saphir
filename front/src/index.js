@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from './pages';
+import Articles from './pages/articles';
 import NewArticle from './pages/newArticle';
 
 const AppRouter = () => (
@@ -14,12 +15,16 @@ const AppRouter = () => (
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/articles/new">New article</Link>
+            <Link to="/articles">Articles</Link>
+          </li>
+          <li>
+            <Link to="/article/new">New article</Link>
           </li>
         </ul>
       </nav>
       <Route path="/" exact component={Home} />
-      <Route path="/articles/new" component={NewArticle} />
+      <Route path="/articles" component={Articles} />
+      <Route path="/article/new" component={NewArticle} />
     </div>
   </Router>
 );
