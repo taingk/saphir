@@ -1,7 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppRouter from './router';
 import * as serviceWorker from './serviceWorker';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Home from './pages';
+import NewArticle from './pages/newArticle';
+
+const AppRouter = () => (
+  <Router>
+    <div>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/articles/new">New article</Link>
+          </li>
+        </ul>
+      </nav>
+      <Route path="/" exact component={Home} />
+      <Route path="/articles/new" component={NewArticle} />
+    </div>
+  </Router>
+);
 
 ReactDOM.render(<AppRouter />, document.getElementById('root'));
 
