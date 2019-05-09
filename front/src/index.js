@@ -8,24 +8,22 @@ import NewArticle from './pages/newArticle';
 
 const AppRouter = () => (
   <Router>
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/articles">Articles</Link>
-          </li>
-          <li>
-            <Link to="/new/article">New article</Link>
-          </li>
-        </ul>
-      </nav>
-      <Route path="/" exact component={Home} />
-      <Route path="/articles" component={Articles} />
-      <Route path="/new/article" component={NewArticle} />
-    </div>
+    <nav>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/articles">Articles</Link>
+        </li>
+        <li>
+          <Link to="/new/article">New article</Link>
+        </li>
+      </ul>
+    </nav>
+    <Route path="/" exact component={Home} />
+    <Route path="/articles" component={Articles} />
+    <Route path="/new/article" component={NewArticle} />
   </Router>
 );
 

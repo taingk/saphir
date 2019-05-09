@@ -30,9 +30,11 @@ export default () => {
   return (
     <>
       <h1>Articles</h1>
-      {articles.length > 0 ?
-        articles.map(article => <Article key={article.id}>{parse(`${article.title}${article.content}`)}</Article>) :
-        <Article default>Chargement des articles ...</Article>}
+      <ul>
+        {articles.length > 0 ?
+          articles.map(article => <Article key={article.id}>{parse(`${article.title}${article.content}`)}</Article>) :
+          <Article default>Chargement des articles ...</Article>}
+      </ul>
     </>
   );
 };
