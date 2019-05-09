@@ -4,7 +4,10 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from './pages';
 import Articles from './pages/articles';
+import ShowArticle from './pages/showArticle';
 import NewArticle from './pages/newArticle';
+import EditArticle from './pages/editArticle';
+import DeleteArticle from './pages/deleteArticle';
 
 const AppRouter = () => (
   <Router>
@@ -23,7 +26,10 @@ const AppRouter = () => (
     </nav>
     <Route path="/" exact component={Home} />
     <Route path="/articles" component={Articles} />
+    <Route path="/show/article/:id" component={ShowArticle} />
     <Route path="/new/article" component={NewArticle} />
+    <Route path="/edit/article/:id" component={EditArticle} />
+    <Route path="/delete/article/:id" component={DeleteArticle} />
   </Router>
 );
 
