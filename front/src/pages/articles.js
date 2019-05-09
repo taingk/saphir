@@ -21,7 +21,8 @@ export default () => {
   return (
     <>
       <h1>Articles</h1>
-      {articles.map(article => parse(`${article.title}${article.content}`))}
+      {articles.length > 0 ?
+        articles.map(article => parse(`${article.title}${article.content}`)) : 'Chargement des articles ...'}
     </>
   );
 };
