@@ -1,10 +1,10 @@
 import React from 'react';
-import { deleteArticle } from '../utils/api';
+import articleApi from '../../utils/articleApi';
 
 export default ({ match }) => {
   const { id } = match.params;
 
-  deleteArticle(id);
+  articleApi.del(id);
 
   return <h1>Delete</h1>;
 };

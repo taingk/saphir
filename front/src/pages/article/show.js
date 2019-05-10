@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import parse from 'html-react-parser';
 import styled from '@emotion/styled';
-import { getArticle } from '../utils/api';
+import articleApi from '../../utils/articleApi';
 
 const Article = styled.li`
   background:${props =>
@@ -16,15 +16,12 @@ export default ({ match }) => {
   const { id } = match.params;
 
   useEffect(() => {
-    getArticle(id).then(data => setArticle(data));
+    articleApi.get(id).then(data => setArticle(data));
   }, []);
 
   return (
-    <>
-      <h1>Articles</h1>
-      <ul>
-        <Article>{parse(`${article.title}${article.content}`)}</Article>
-      </ul>
-    </>
+    <ul>
+      <Article>{parse(`${article.title}${article.content}`)}</Article>
+    </ul>
   );
 };

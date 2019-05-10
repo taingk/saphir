@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Wysiwyg from '../components/Wysiwyg';
-import { getArticle, putArticle } from '../utils/api';
+import Wysiwyg from '../../components/Wysiwyg';
+import articleApi from '../../utils/articleApi';
 
 export default ({ match }) => {
   const [title, setTitle] = useState('');
@@ -9,14 +9,14 @@ export default ({ match }) => {
   const { id } = match.params;
 
   useEffect(() => {
-    getArticle(id).then(article => setArticle(article));
+    articleApi.get(id).then(article => setArticle(article));
   }, []);
 
   return (
     <>
       <input type="text" defaultValue={article.title} onChange={e => setTitle(e.target.value)} />
       <Wysiwyg setValue={setContent} content={article.content} />
-      <button onClick={() => putArticle(id, title, content)}>Submit</button>
+      <button onClick={() => articleApi.put(id, { title, content })}>Submit</button>
     </>
   );
 };

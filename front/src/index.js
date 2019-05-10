@@ -2,30 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Home from './pages';
-import Articles from './pages/articles';
-import ShowArticle from './pages/showArticle';
-import NewArticle from './pages/newArticle';
-import EditArticle from './pages/editArticle';
-import DeleteArticle from './pages/deleteArticle';
+import Articles from './pages/article';
+import ShowArticle from './pages/article/show';
+import NewArticle from './pages/article/new';
+import EditArticle from './pages/article/edit';
+import DeleteArticle from './pages/article/delete';
 
 const AppRouter = () => (
   <Router>
     <nav>
       <ul>
         <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/articles">Articles</Link>
+          <Link to="/">Articles</Link>
         </li>
         <li>
           <Link to="/new/article">New article</Link>
         </li>
       </ul>
     </nav>
-    <Route path="/" exact component={Home} />
-    <Route path="/articles" component={Articles} />
+    <Route path="/" exact component={Articles} />
     <Route path="/show/article/:id" component={ShowArticle} />
     <Route path="/new/article" component={NewArticle} />
     <Route path="/edit/article/:id" component={EditArticle} />

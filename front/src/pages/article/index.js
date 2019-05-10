@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import parse from 'html-react-parser';
 import styled from '@emotion/styled';
-import { getArticles } from '../utils/api';
+import articleApi from '../../utils/articleApi';
 
 const Article = styled.li`
   background:${props =>
@@ -15,7 +15,7 @@ export default () => {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    getArticles().then(data => setArticles(data));
+    articleApi.getAll().then(data => setArticles(data));
   }, []);
 
   return (

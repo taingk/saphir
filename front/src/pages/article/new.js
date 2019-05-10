@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Wysiwyg from '../components/Wysiwyg';
-import { postArticle } from '../utils/api';
+import Wysiwyg from '../../components/Wysiwyg';
+import articleApi from '../../utils/articleApi';
 
 export default () => {
   const [title, setTitle] = useState('');
@@ -10,7 +10,7 @@ export default () => {
     <>
       <input type="text" onChange={e => setTitle(e.target.value)} />
       <Wysiwyg setValue={setContent} />
-      <button onClick={() => postArticle(title, content)}>Submit</button>
+      <button onClick={() => articleApi.post({ title, content })}>Submit</button>
     </>
   );
 };
