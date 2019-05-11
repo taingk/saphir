@@ -10,7 +10,7 @@ export default ({ match }) => {
 
   useEffect(() => {
     articleApi.get(id).then(article => setArticle(article));
-  }, []);
+  }, [id]);
 
   return (
     <>

@@ -17,7 +17,7 @@ export default ({ match }) => {
 
   useEffect(() => {
     articleApi.get(id).then(data => setArticle(data));
-  }, []);
+  }, [id]);
 
   return (
     <ul>
