@@ -2,6 +2,7 @@ GET http://localhost:3000/articles
 ###
 POST http://localhost:3000/articles
 Content-Type: application/json
+
 {
   "title": "from",
   "content": "rest http"
@@ -15,4 +16,15 @@ Content-Type: application/json
 {
   "content": "test commentaire",
   "article_id": 1
+}
+###
+GET http://localhost:3000/replies
+
+###
+POST http://localhost:3000/replies
+Content-Type: application/json
+
+{
+  "content": "test reponse à un commentaire",
+  "comment_id": 1
 }

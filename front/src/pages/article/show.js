@@ -12,7 +12,7 @@ const Article = styled.li`
 `;
 
 export default ({ match }) => {
-  const [article, setArticle] = useState([]);
+  const [article, setArticle] = useState({});
   const { id } = match.params;
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export default ({ match }) => {
 
   return (
     <ul>
-      <Article>{parse(`${article.title}${article.content}`)}</Article>
+      <Article>{article ? parse(`${article.title}${article.content}`) : `Chargement de l'article...`}</Article>
     </ul>
   );
 };
