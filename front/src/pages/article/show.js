@@ -19,9 +19,13 @@ export default ({ match }) => {
     articleApi.get(id).then(data => setArticle(data));
   }, [id]);
 
+  if (Object.keys(article).length === 0) {
+    return <h1>Cet article n'existe pas</h1>;
+  }
+
   return (
     <ul>
-      <Article>{article ? parse(`${article.title}${article.content}`) : `Chargement de l'article...`}</Article>
+      <Article>{parse(`${article.title}${article.content}`)}</Article>
     </ul>
   );
 };

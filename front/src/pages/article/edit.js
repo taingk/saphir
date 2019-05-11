@@ -12,6 +12,10 @@ export default ({ match }) => {
     articleApi.get(id).then(article => setArticle(article));
   }, [id]);
 
+  if (Object.keys(article).length === 0) {
+    return <h1>Cet article n'existe pas</h1>;
+  }
+
   return (
     <>
       <input type="text" defaultValue={article.title} onChange={e => setTitle(e.target.value)} />

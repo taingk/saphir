@@ -8,6 +8,7 @@ const getAll = async () => {
   } catch (e) {
     console.log(`😱 Axios request failed: ${e}`);
   }
+  return [];
 };
 
 const get = async id => {
@@ -18,6 +19,7 @@ const get = async id => {
   } catch (e) {
     console.log(`😱 Axios request failed: ${e}`);
   }
+  return {};
 };
 
 const post = async (body = {}) => {
