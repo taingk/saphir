@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import parse from 'html-react-parser';
 import styled from '@emotion/styled';
 import articleApi from '../../utils/articleApi';
+import Comments from '../../components/comment';
 
 const Article = styled.li`
   background:${props =>
@@ -24,8 +25,9 @@ export default ({ match }) => {
   }
 
   return (
-    <ul>
+    <>
       <Article>{parse(`${article.title}${article.content}`)}</Article>
-    </ul>
+      <Comments article_id={id}></Comments>
+    </>
   );
 };
