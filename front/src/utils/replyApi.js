@@ -32,6 +32,7 @@ const post = async (body = {}) => {
 };
 
 const put = async (id, body = {}) => {
+  console.log(body);
   try {
     const data = await axios.put(`replies/${id}`, body);
     console.log('👉 Returned data:', data);
