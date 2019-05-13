@@ -6,7 +6,6 @@ import Articles from './pages/article';
 import ShowArticle from './pages/article/show';
 import NewArticle from './pages/article/new';
 import EditArticle from './pages/article/edit';
-import DeleteArticle from './pages/article/delete';
 
 const AppRouter = () => (
   <Router>
@@ -24,7 +23,6 @@ const AppRouter = () => (
     <Route path="/show/article/:id" component={ShowArticle} />
     <Route path="/new/article" component={NewArticle} />
     <Route path="/edit/article/:id" component={EditArticle} />
-    <Route path="/delete/article/:id" component={DeleteArticle} />
   </Router>
 );
 
