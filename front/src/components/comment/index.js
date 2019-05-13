@@ -17,7 +17,7 @@ export default ({ article_id }) => {
   return (
     <>
       <h1>Commentaires</h1>
-      <NewComment article_id={article_id} />
+      <NewComment article_id={article_id} setComments={setComments} />
       <ul>
         {comments.map(comment => <>
           <li key={comment.id}>{parse(comment.content)}</li>
