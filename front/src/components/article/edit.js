@@ -17,9 +17,11 @@ const Edit = ({ id, history }) => {
     .then(({ data }) => history.push(`/show/article/${data.id}`));
 
   useEffect(() => {
-    articleApi.get(id).then(article => setArticle(article));
-    setTitle(article.title);
-    setContent(article.content);
+    articleApi.get(id).then(article => {
+      setArticle(article)
+      setTitle(article.title);
+      setContent(article.content);
+    });
   }, [id, article.title, article.content]);
 
   if (Object.keys(article).length === 0) {
