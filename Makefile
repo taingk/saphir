@@ -28,3 +28,7 @@ clean-front:
 	rm yarn.lock && \
 	rm -rf node_modules && \
 	docker exec react-front yarn install
+
+restart:
+	docker restart ruby-api
+	docker restart react-front

@@ -1,8 +1,37 @@
 GET http://localhost:3000/articles
 ###
 POST http://localhost:3000/articles
+Content-Type: application/json
 
 {
-  "title": "test",
-  "content": "test"
+  "title": "second",
+  "content": "article"
+}
+###
+GET http://localhost:3000/comments?article_id=1
+###
+POST http://localhost:3000/comments
+Content-Type: application/json
+
+{
+  "content": "heyy",
+  "article_id": 1
+}
+###
+PUT http://localhost:3000/comments/3
+Content-Type: application/json
+
+{
+  "content": "salu"
+}
+###
+GET http://localhost:3000/replies
+
+###
+POST http://localhost:3000/replies
+Content-Type: application/json
+
+{
+  "content": "hey",
+  "comment_id": 2
 }

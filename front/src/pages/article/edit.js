@@ -10,7 +10,13 @@ export default ({ match }) => {
 
   useEffect(() => {
     articleApi.get(id).then(article => setArticle(article));
-  }, []);
+    setTitle(article.title);
+    setContent(article.content);
+  }, [id, article.title, article.content]);
+
+  if (Object.keys(article).length === 0) {
+    return <h1>Cet article n'existe pas</h1>;
+  }
 
   return (
     <>

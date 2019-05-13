@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import parse from 'html-react-parser';
 import styled from '@emotion/styled';
 import articleApi from '../../utils/articleApi';
+import Comments from '../../components/comment';
 
 const Article = styled.li`
   background:${props =>
@@ -12,16 +13,21 @@ const Article = styled.li`
 `;
 
 export default ({ match }) => {
-  const [article, setArticle] = useState([]);
+  const [article, setArticle] = useState({});
   const { id } = match.params;
 
   useEffect(() => {
     articleApi.get(id).then(data => setArticle(data));
-  }, []);
+  }, [id]);
+
+  if (Object.keys(article).length === 0) {
+    return <h1>Cet article n'existe pas</h1>;
+  }
 
   return (
-    <ul>
+    <>
       <Article>{parse(`${article.title}${article.content}`)}</Article>
-    </ul>
+      <Comments article_id={id}></Comments>
+    </>
   );
 };
