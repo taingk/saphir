@@ -1,16 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import parse from 'html-react-parser';
-import styled from '@emotion/styled';
 import articleApi from '../../utils/articleApi';
+import { Article } from '../../components/article';
+import { EditButton } from '../../components/article/edit';
+import DeleteArticle from '../../components/article/delete';
 import Comments from '../../components/comment';
-
-const Article = styled.li`
-  background:${props =>
-    props.default ? 'white' : '#FF9090'};
-  p {
-    color: white;
-  }
-`;
 
 export default ({ match }) => {
   const [article, setArticle] = useState({});
@@ -26,7 +19,9 @@ export default ({ match }) => {
 
   return (
     <>
-      <Article>{parse(`${article.title}${article.content}`)}</Article>
+      <Article article={article}></Article>
+      <EditButton article_id={id}></EditButton>
+      <DeleteArticle article_id={id} setArticle={setArticle}></DeleteArticle>
       <Comments article_id={id}></Comments>
     </>
   );
