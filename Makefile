@@ -29,5 +29,6 @@ clean-front:
 	rm -rf node_modules && \
 	docker exec react-front yarn install
 
-restart-ruby:
-	docker-compose run ruby rails s
+restart:
+	docker restart ruby-api
+	docker restart react-front
