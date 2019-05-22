@@ -57,7 +57,7 @@ const commentApi = {
   get,
   post,
   put,
-  del
+  del,
 };
 
 export default commentApi;

@@ -58,7 +58,7 @@ const articleApi = {
   get,
   post,
   put,
-  del
+  del,
 };
 
 export default articleApi;

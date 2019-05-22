@@ -10,19 +10,25 @@ export default ({ article_id, setComments, comment_id }) => {
     mode === 'read' ? setMode('reply') : setMode('read');
   };
   const add = () => {
-    replyApi.post({ content, comment_id })
-      .then(() => commentApi.getAll({ article_id })
-      .then(comments => setComments(comments)))
+    replyApi
+      .post({ content, comment_id })
+      .then(() =>
+        commentApi
+          .getAll({ article_id })
+          .then(comments => setComments(comments))
+      );
     setMode('read');
   };
 
   return (
     <>
       <button onClick={changeMode}>Reply</button>
-      {mode === 'reply' && <>
-        <Wysiwyg setValue={setContent} />
-        <button onClick={add}>Submit</button>
-      </>}
+      {mode === 'reply' && (
+        <>
+          <Wysiwyg setValue={setContent} />
+          <button onClick={add}>Submit</button>
+        </>
+      )}
     </>
   );
 };

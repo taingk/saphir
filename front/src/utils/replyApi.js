@@ -58,7 +58,7 @@ const replyApi = {
   get,
   post,
   put,
-  del
+  del,
 };
 
 export default replyApi;

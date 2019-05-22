@@ -32,3 +32,7 @@ clean-front:
 restart:
 	docker restart ruby-api
 	docker restart react-front
+
+pretty:
+	cd front && \
+	prettier --single-quote --trailing-comma es5 --write "**/*.js"

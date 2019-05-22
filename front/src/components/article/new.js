@@ -6,8 +6,10 @@ import articleApi from '../../utils/articleApi';
 const NewArticle = ({ history }) => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const add = () => articleApi.post({ title, content })
-    .then(({ data }) => history.push(`/show/article/${data.id}`));
+  const add = () =>
+    articleApi
+      .post({ title, content })
+      .then(({ data }) => history.push(`/show/article/${data.id}`));
 
   return (
     <>
