@@ -8,13 +8,22 @@ Content-Type: application/json
   "content": "article"
 }
 ###
+
+POST http://localhost:3000/likes
+Content-Type: application/json
+
+{
+  "article_id": 1,
+}
+
+###
 GET http://localhost:3000/comments?article_id=1
 ###
 POST http://localhost:3000/comments
 Content-Type: application/json
 
 {
-  "content": "heyy",
+  "content": "Premier commentaire",
   "article_id": 1
 }
 ###
