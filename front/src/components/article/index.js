@@ -1,21 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import styled from '@emotion/styled';
 import parse from 'html-react-parser';
 import articleApi from '../../utils/articleApi';
-
-const StyledArticle = styled.li`
-  background: ${props => (props.default ? 'white' : '#FF9090')};
-  p  {
-    color: white;
-  }
-`;
+import { LikesNumber } from '../like';
+import { CommentsNumber } from '../comment';
 
 export const Article = ({ article }) => (
-  <StyledArticle>
-    <Link to={`/show/article/${article.id}`}>{parse(article.title)}</Link>
+  <>
+    {parse(article.title)}
     {parse(article.content)}
-  </StyledArticle>
+  </>
+);
+
+const Title = ({ article }) => (
+  <>
+    <Link to={`/show/article/${article.id}`}>{parse(article.title)}</Link>
+    <br />
+    <LikesNumber nbLikes={article.nb_likes} />
+    <CommentsNumber nbComments={article.nb_comments} />
+  </>
 );
 
 export default () => {
@@ -26,13 +29,13 @@ export default () => {
   }, []);
 
   if (!articles.length) {
-    return <StyledArticle default>Chargement des articles ...</StyledArticle>;
+    return <>Chargement des articles ...</>;
   }
 
   return (
     <ul>
       {articles.map(article => (
-        <Article key={article.id} article={article} />
+        <Title key={article.id} article={article} />
       ))}
     </ul>
   );

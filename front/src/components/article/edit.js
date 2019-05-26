@@ -18,16 +18,13 @@ const Edit = ({ id, history }) => {
       .put(id, { title, content })
       .then(({ data }) => history.push(`/show/article/${data.id}`));
 
-  useEffect(
-    () => {
-      articleApi.get(id).then(article => {
-        setArticle(article);
-        setTitle(article.title);
-        setContent(article.content);
-      });
-    },
-    [id, article.title, article.content]
-  );
+  useEffect(() => {
+    articleApi.get(id).then(article => {
+      setArticle(article);
+      setTitle(article.title);
+      setContent(article.content);
+    });
+  }, [id, article.title, article.content]);
 
   if (Object.keys(article).length === 0) {
     return <h1>Cet article n'existe pas</h1>;

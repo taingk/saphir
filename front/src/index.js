@@ -1,28 +1,60 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Grommet, Button, Heading } from 'grommet';
+import * as serviceWorker from './serviceWorker';
+import { Edit } from 'grommet-icons';
+
+import Nav from './components/Nav';
 import Articles from './pages/article';
 import ShowArticle from './pages/article/show';
 import NewArticle from './pages/article/new';
 import EditArticle from './pages/article/edit';
 
+const theme = {
+  global: {
+    colors: {
+      brand: '#228BE6',
+    },
+    font: {
+      family: 'Roboto',
+      size: '14px',
+      height: '20px',
+    },
+    focus: {
+      border: {
+        color: 'white',
+      },
+    },
+  },
+  button: {
+    primary: {
+      color: 'white',
+    },
+    border: {
+      color: 'white',
+    },
+  },
+};
+
 const AppRouter = () => (
   <Router>
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Articles</Link>
-        </li>
-        <li>
-          <Link to="/new/article">New article</Link>
-        </li>
-      </ul>
-    </nav>
-    <Route path="/" exact component={Articles} />
-    <Route path="/show/article/:id" component={ShowArticle} />
-    <Route path="/new/article" component={NewArticle} />
-    <Route path="/edit/article/:id" component={EditArticle} />
+    <Grommet theme={theme} full>
+      <Nav>
+        <Link to="/">
+          <Heading level="3" margin="none" color="white">
+            Saphir
+          </Heading>
+        </Link>
+        <Link to="/new/article">
+          <Button icon={<Edit />} label="Ecrire un article" primary />
+        </Link>
+      </Nav>
+      <Route path="/" exact component={Articles} />
+      <Route path="/show/article/:id" component={ShowArticle} />
+      <Route path="/new/article" component={NewArticle} />
+      <Route path="/edit/article/:id" component={EditArticle} />
+    </Grommet>
   </Router>
 );
 

@@ -2,10 +2,18 @@ import React, { useState, useEffect } from 'react';
 import parse from 'html-react-parser';
 import commentApi from '../../utils/commentApi';
 import replyApi from '../../utils/replyApi';
+import Reply from '../reply';
 import NewComment from './new';
-import NewReply from './newReply';
+import NewReply from '../reply/new';
 import EditComment from './edit';
 import DeleteComment from './delete';
+
+export const CommentsNumber = ({ nbComments }) => (
+  <span>
+    {nbComments} Commentaire
+    {nbComments > 1 ? 's' : null}
+  </span>
+);
 
 const Comment = ({ article_id, setComments, comment, api }) => (
   <li>
@@ -31,48 +39,26 @@ const Comment = ({ article_id, setComments, comment, api }) => (
   </li>
 );
 
-const Reply = ({ article_id, setComments, reply, api }) => (
-  <li>
-    {parse(reply.content)}
-    <EditComment
-      article_id={article_id}
-      setComments={setComments}
-      id={reply.id}
-      api={api}
-      data={reply.content}
-    />
-    <DeleteComment
-      article_id={article_id}
-      setComments={setComments}
-      id={reply.id}
-      api={api}
-    />
-  </li>
-);
-
 export default ({ article_id }) => {
   const [comments, setComments] = useState([]);
 
-  useEffect(
-    () => {
-      commentApi.getAll({ article_id }).then(comments => setComments(comments));
-    },
-    [article_id]
-  );
+  useEffect(() => {
+    commentApi.getAll({ article_id }).then(comments => setComments(comments));
+  }, [article_id]);
 
   if (!comments.length) {
     return (
-      <>
-        <h1>Commentaires</h1>
+      <div>
+        <CommentsNumber nbComments={comments.length} />
         <NewComment article_id={article_id} setComments={setComments} />
         <p>Il n'y a pas de commentaire.</p>
-      </>
+      </div>
     );
   }
 
   return (
-    <>
-      <h1>Commentaires</h1>
+    <div>
+      <CommentsNumber nbComments={comments.length} />
       <NewComment article_id={article_id} setComments={setComments} />
       <ul>
         {comments.map(comment => (
@@ -99,6 +85,6 @@ export default ({ article_id }) => {
           </React.Fragment>
         ))}
       </ul>
-    </>
+    </div>
   );
 };
