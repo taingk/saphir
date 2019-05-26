@@ -3,7 +3,8 @@ import likeApi from "../../utils/likeApi";
 
 export const LikesNumber = ({ nbLikes }) => (
   <span>
-    {nbLikes} Like{nbLikes > 1 ? "s" : null}
+    {nbLikes} Like
+    {nbLikes > 1 ? "s" : null}
   </span>
 );
 

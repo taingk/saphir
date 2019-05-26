@@ -9,7 +9,8 @@ import DeleteComment from "./delete";
 
 export const CommentsNumber = ({ nbComments }) => (
   <span>
-    {nbComments} Commentaire{nbComments > 1 ? "s" : null}
+    {nbComments} Commentaire
+    {nbComments > 1 ? "s" : null}
   </span>
 );
 
