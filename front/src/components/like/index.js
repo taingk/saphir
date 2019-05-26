@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import likeApi from "../../utils/likeApi";
+import React, { useState } from 'react';
+import likeApi from '../../utils/likeApi';
 
 export const LikesNumber = ({ nbLikes }) => (
   <span>
     {nbLikes} Like
-    {nbLikes > 1 ? "s" : null}
+    {nbLikes > 1 ? 's' : null}
   </span>
 );
 

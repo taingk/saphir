@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import parse from "html-react-parser";
-import articleApi from "../../utils/articleApi";
-import { LikesNumber } from "../like";
-import { CommentsNumber } from "../comment";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import parse from 'html-react-parser';
+import articleApi from '../../utils/articleApi';
+import { LikesNumber } from '../like';
+import { CommentsNumber } from '../comment';
 
 export const Article = ({ article }) => (
   <>

@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
-import parse from "html-react-parser";
-import commentApi from "../../utils/commentApi";
-import replyApi from "../../utils/replyApi";
-import NewComment from "./new";
-import NewReply from "./newReply";
-import EditComment from "./edit";
-import DeleteComment from "./delete";
+import React, { useState, useEffect } from 'react';
+import parse from 'html-react-parser';
+import commentApi from '../../utils/commentApi';
+import replyApi from '../../utils/replyApi';
+import NewComment from './new';
+import NewReply from './newReply';
+import EditComment from './edit';
+import DeleteComment from './delete';
 
 export const CommentsNumber = ({ nbComments }) => (
   <span>
     {nbComments} Commentaire
-    {nbComments > 1 ? "s" : null}
+    {nbComments > 1 ? 's' : null}
   </span>
 );
 

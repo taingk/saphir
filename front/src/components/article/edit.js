@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Link, withRouter } from "react-router-dom";
-import Wysiwyg from "../../components/Wysiwyg";
-import articleApi from "../../utils/articleApi";
+import React, { useState, useEffect } from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import Wysiwyg from '../../components/Wysiwyg';
+import articleApi from '../../utils/articleApi';
 
 export const EditButton = ({ article_id }) => (
   <Link to={`/edit/article/${article_id}`}>
@@ -10,8 +10,8 @@ export const EditButton = ({ article_id }) => (
 );
 
 const Edit = ({ id, history }) => {
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
   const [article, setArticle] = useState({});
   const edit = () =>
     articleApi

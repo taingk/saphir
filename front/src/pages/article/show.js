@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import articleApi from "../../utils/articleApi";
-import { Article } from "../../components/article";
-import { EditButton } from "../../components/article/edit";
-import DeleteArticle from "../../components/article/delete";
-import Comments from "../../components/comment";
-import Like from "../../components/like";
+import React, { useState, useEffect } from 'react';
+import articleApi from '../../utils/articleApi';
+import { Article } from '../../components/article';
+import { EditButton } from '../../components/article/edit';
+import DeleteArticle from '../../components/article/delete';
+import Comments from '../../components/comment';
+import Like from '../../components/like';
 
 export default ({ match }) => {
   const [article, setArticle] = useState({});
