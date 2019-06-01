@@ -3,6 +3,9 @@ RUN mkdir /api
 WORKDIR /api
 COPY ./api/Gemfile /api/Gemfile
 COPY ./api/Gemfile.lock /api/Gemfile.lock
+RUN gem update --system
+RUN gem install bundler
+RUN bundle update --bundler
 RUN bundle install
 COPY ./api/ /api
 
