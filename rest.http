@@ -4,8 +4,8 @@ POST http://localhost:3000/articles
 Content-Type: application/json
 
 {
-  "title": "second",
-  "content": "article"
+  "title": "developper en ruby",
+  "content": "c'est facile"
 }
 ###
 
@@ -43,4 +43,15 @@ Content-Type: application/json
 {
   "content": "hey",
   "comment_id": 2
+}
+
+###
+GET http://localhost:3000/categories
+
+###
+POST http://localhost:3000/categories
+Content-Type: application/json
+
+{
+  "name": "ruby"
 }
