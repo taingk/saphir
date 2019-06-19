@@ -4,8 +4,10 @@ import { withRouter } from 'react-router-dom';
 
 const LogOut = ({ history }) => {
 
+  console.log(window.localStorage.getItem('token'));
     useEffect(() => {
-        sessionStorage.removeItem('token').history.push(`/`);
+      window.localStorage.removeItem('token');
+      history.push(`/`);
         });
 
   return (

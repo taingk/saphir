@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { withRouter } from 'react-router-dom';
+import { Context } from 'path/to/src/components/Provider';
 import authApi from '../../utils/authApi';
 
 const LogIn = ({ history }) => {
@@ -8,7 +9,7 @@ const LogIn = ({ history }) => {
   const login = () =>
     authApi
       .login({ email, password })
-      .then(({ data }) => sessionStorage.setItem('token', data.auth_token))
+      .then(({ data }) => localStorage.setItem('token', data.auth_token))
       .then( history.push(`/`));
 
   return (
