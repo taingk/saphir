@@ -7,9 +7,17 @@ Content-Type: application/json
   "title": "second",
   "content": "article"
 }
+
 ###
 
+POST http://localhost:3000/authenticate
+Content-Type: application/json
 
+{
+  "email":"example@mail.com",
+  "password":"123123123"
+}
+###
 GET http://localhost:3000/users
 
 ###
