@@ -44,26 +44,6 @@ const theme = {
 
 const AppRouter = () => (
   <Router>
-<<<<<<< HEAD
-    <Provider>
-      <Grommet theme={theme} full>
-        <Nav>
-          <Link to="/">
-            <Heading level="3" margin="none" color="white">
-              Saphir
-            </Heading>
-          </Link>
-          <Link to="/new/article">
-            <Button icon={<Edit />} label="Ecrire un article" primary />
-          </Link>
-        </Nav>
-        <Route path="/" exact component={Articles} />
-        <Route path="/show/article/:id" component={ShowArticle} />
-        <Route path="/new/article" component={NewArticle} />
-        <Route path="/edit/article/:id" component={EditArticle} />
-      </Grommet>
-    </Provider>
-=======
     <Grommet theme={theme} full>
       <Nav>
         <Link to="/">
@@ -85,7 +65,6 @@ const AppRouter = () => (
       <Route path="/login" exact component={Login} />
       <Route path="/logout" exact component={Logout} />
     </Grommet>
->>>>>>> login working, logout WIP
   </Router>
 );
 

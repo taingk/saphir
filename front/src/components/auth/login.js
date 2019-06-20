@@ -1,16 +1,19 @@
 import React, { useState, useContext } from 'react';
 import { withRouter } from 'react-router-dom';
-import { Context } from 'path/to/src/components/Provider';
+import { Context } from '../../components/Provider';
 import authApi from '../../utils/authApi';
 
 const LogIn = ({ history }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const context = useContext(Context);
   const login = () =>
     authApi
       .login({ email, password })
-      .then(({ data }) => localStorage.setItem('token', data.auth_token))
-      .then( history.push(`/`));
+      .then(({ data }) => context.setJWT(data.auth_token))
+      .then( history.push(`/`))
+      console.log(context.jwt)
+      ;
 
   return (
     <>

@@ -21,7 +21,7 @@ Content-Type: application/json
 GET http://localhost:3000/users
 Content-Type: application/json 
 Accept: application/json
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjEwMjYxODV9.d09eaWeLB8jPtaGIJ4HyX0NZ095jPBPHmqrTdYPbvDE
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjExMjM3Njh9.TTZAdgR5dLXAao-yVbWUEAlzAArQmkTsDUBVgBgEHcs
 
 
 ###
