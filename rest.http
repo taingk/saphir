@@ -13,14 +13,18 @@ Content-Type: application/json
 GET http://localhost:3000/users
 
 ###
+
+DELETE http://localhost:3000/users/2
+
+###
+
 POST http://localhost:3000/users
 Content-Type: application/json
 
 {
   "pseudo":"leo",
-  "email": "leo.wattier@free.fr",
-  "password":"password",
-  "role": 1
+  "email": "leo.wattier@gmail.fr",
+  "password":"password"
 }
 
 ###

@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
     include ActionController::Helpers
-    
+    check_authorization
     helper_method :current_user
     
          private
