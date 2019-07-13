@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :update, :destroy]
-
+  load_and_authorize_resource
   # GET /comments
   def index
     if params.has_key?(:article_id)

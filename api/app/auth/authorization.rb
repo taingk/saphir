@@ -1,6 +1,6 @@
 class Authorization
-    def def initialize(request)
-      @token = request.headers[:HTTP_TOKEN]
+    def initialize(request)
+      @token = request.headers[:Authorization]
     end
 
     def current_user

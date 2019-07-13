@@ -6,14 +6,17 @@ class Ability
     if user.has_role? :admin
       can :manage, :all
     elsif user.has_role? :user
-      can :create, :all 
+      can :create, :all
       can :read, :all
-      can [:update, :destroy], Article, :user_id user.id
-      can [:update, :destroy], Post, :user_id user.id
-      can [:update, :destroy], Comment, :user_id user.id
-      can [:update, :destroy], User, :id user.id
+      can :manage, Article
+      can [:update, :destroy], Post
+      can [:update, :destroy], Comment
+      can [:update, :destroy], User
+      # can [:update, :destroy], User, :id user.id
     else
       can :read, :all
+      can :create, User
+      can :manage, :all
     end
   end
 end

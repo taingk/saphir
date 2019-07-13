@@ -1,7 +1,6 @@
 import axios from './api';
 
 const login = async ( body = {}) => {
-  console.log(body);
   try {
     const data = await axios.post(`authenticate`, body);
     console.log('👉 Returned data:', data);

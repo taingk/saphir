@@ -1,5 +1,6 @@
 class Authentication
-    def def initialize(user_object)
+    
+    def initialize(user_object)
       @username = user_object[:username]
       @password = user_object[:password]
       @user = User.find_by(username: @username)

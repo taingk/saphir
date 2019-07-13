@@ -1,10 +1,14 @@
+GET http://localhost:3000/users
+###
+
 GET http://localhost:3000/articles
 ###
 POST http://localhost:3000/articles
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjMwMjI1NDN9.fg2J33Ct5VFgIMRsUINR5zFzB1A1new70WYgQN6fquo
 
 {
-  "title": "second",
+  "title": "first",
   "content": "article"
 }
 
@@ -14,15 +18,14 @@ POST http://localhost:3000/authenticate
 Content-Type: application/json
 
 {
-  "email":"example@mail.com",
-  "password":"123123123"
+  "email":"lea.wattier@gmail.com",
+  "password":"password"
 }
 ###
 GET http://localhost:3000/users
 Content-Type: application/json 
 Accept: application/json
 Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjExMjM3Njh9.TTZAdgR5dLXAao-yVbWUEAlzAArQmkTsDUBVgBgEHcs
-
 
 ###
 
@@ -34,8 +37,8 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "pseudo":"leo",
-  "email": "leo.wattier@gmail.fr",
+  "username":"leo",
+  "email": "lea.wattier@gmail.com",
   "password":"password"
 }
 

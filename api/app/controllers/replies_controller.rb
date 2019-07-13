@@ -1,6 +1,6 @@
 class RepliesController < ApplicationController
   before_action :set_reply, only: [:show, :update, :destroy]
-
+  load_and_authorize_resource
   # GET /replies
   def index
     @replies = Reply.all

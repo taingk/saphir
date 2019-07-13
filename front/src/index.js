@@ -14,6 +14,7 @@ import EditArticle from './pages/article/edit';
 import Login from './pages/auth/login';
 import Logout from './pages/auth/logout';
 import isConnected from './utils/isConnected';
+import NewUser from './pages/user/new';
 
 const theme = {
   global: {
@@ -64,6 +65,7 @@ const AppRouter = () => (
       <Route path="/edit/article/:id" component={EditArticle} />
       <Route path="/login" exact component={Login} />
       <Route path="/logout" exact component={Logout} />
+      <Route path="/new/user" exact component={NewUser} />
     </Grommet>
   </Router>
 );

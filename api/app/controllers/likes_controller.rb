@@ -29,7 +29,7 @@ class LikesController < ApplicationController
     if @like.update(like_params)
       render json: @like
     else
-      render json: @like.errors, status: :unprocessable_entity
+      render json: like.errors, status: :unprocessabl@e_entity
     end
   end
 
