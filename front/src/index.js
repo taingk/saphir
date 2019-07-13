@@ -5,6 +5,7 @@ import { Grommet, Button, Heading } from 'grommet';
 import * as serviceWorker from './serviceWorker';
 import { Edit } from 'grommet-icons';
 
+import Provider from './components/Provider';
 import Nav from './components/Nav';
 import SearchBar from './components/SearchBar';
 import Articles from './pages/article';
@@ -40,23 +41,24 @@ const theme = {
 
 const AppRouter = () => (
   <Router>
-    <Grommet theme={theme} full>
-      <Nav>
-        <Link to="/">
-          <Heading level="3" margin="none" color="white">
-            Saphir
-          </Heading>
-        </Link>
-        <SearchBar />
-        <Link to="/new/article">
-          <Button icon={<Edit />} label="Ecrire un article" primary />
-        </Link>
-      </Nav>
-      <Route path="/" exact component={Articles} />
-      <Route path="/show/article/:id" component={ShowArticle} />
-      <Route path="/new/article" component={NewArticle} />
-      <Route path="/edit/article/:id" component={EditArticle} />
-    </Grommet>
+    <Provider>
+      <Grommet theme={theme} full>
+        <Nav>
+          <Link to="/">
+            <Heading level="3" margin="none" color="white">
+              Saphir
+            </Heading>
+          </Link>
+          <Link to="/new/article">
+            <Button icon={<Edit />} label="Ecrire un article" primary />
+          </Link>
+        </Nav>
+        <Route path="/" exact component={Articles} />
+        <Route path="/show/article/:id" component={ShowArticle} />
+        <Route path="/new/article" component={NewArticle} />
+        <Route path="/edit/article/:id" component={EditArticle} />
+      </Grommet>
+    </Provider>
   </Router>
 );
 
