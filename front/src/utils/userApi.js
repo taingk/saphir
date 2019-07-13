@@ -23,6 +23,7 @@ const get = async id => {
 };
 
 const post = async (body = {}) => {
+  console.log(body);
   try {
     const data = await axios.post('users', body);
     console.log('👉 Returned data:', data);

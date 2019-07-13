@@ -18,7 +18,7 @@ POST http://localhost:3000/authenticate
 Content-Type: application/json
 
 {
-  "email":"lea.wattier@gmail.com",
+  "email":"leo.wattier@gmail.com",
   "password":"password"
 }
 ###
@@ -38,7 +38,7 @@ Content-Type: application/json
 
 {
   "username":"leo",
-  "email": "lea.wattier@gmail.com",
+  "email": "leo.wattier@gmail.com",
   "password":"password"
 }
 
