@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import { Edit } from 'grommet-icons';
 
 import Nav from './components/Nav';
+import SearchBar from './components/SearchBar';
 import Articles from './pages/article';
 import ShowArticle from './pages/article/show';
 import NewArticle from './pages/article/new';
@@ -46,6 +47,7 @@ const AppRouter = () => (
             Saphir
           </Heading>
         </Link>
+        <SearchBar />
         <Link to="/new/article">
           <Button icon={<Edit />} label="Ecrire un article" primary />
         </Link>
