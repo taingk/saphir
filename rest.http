@@ -8,8 +8,10 @@ Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjMwMjI1NDN9.fg2J33Ct5VFgIMRsUINR5zFzB1A1new70WYgQN6fquo
 
 {
-  "title": "first",
-  "content": "article"
+
+  "title": "developper en ruby",
+  "content": "c'est facile"
+
 }
 
 ###
@@ -78,4 +80,15 @@ Content-Type: application/json
 {
   "content": "hey",
   "comment_id": 2
+}
+
+###
+GET http://localhost:3000/categories/1
+
+###
+POST http://localhost:3000/categories
+Content-Type: application/json
+
+{
+  "name": "ruby"
 }

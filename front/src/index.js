@@ -7,6 +7,7 @@ import { Edit } from 'grommet-icons';
 
 import Provider from './components/Provider';
 import Nav from './components/Nav';
+import SearchBar from './components/SearchBar';
 import Articles from './pages/article';
 import ShowArticle from './pages/article/show';
 import NewArticle from './pages/article/new';
