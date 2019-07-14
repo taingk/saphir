@@ -55,6 +55,9 @@ const AppRouter = () => (
         <Link to={isConnected() ? '/logout' : '/login'}>
           <Button label={isConnected() ? 'Logout' : 'Login'} primary />
         </Link>
+        <Link to="/new/user">
+          <Button label="S'inscrire" />
+        </Link>
         <Link to="/new/article">
           <Button icon={<Edit />} label="Ecrire un article" primary />
         </Link>

@@ -8,8 +8,11 @@ const LogIn = ({ history }) => {
   const login = () =>
     authApi
       .login({ email, password })
-      .then(({ data }) => localStorage.setItem('jwt', data.auth_token))
-      .then(history.push(`/`));
+      .then(({ data }) => {
+        localStorage.setItem('jwt', data.auth_token);
+        history.push(`/`);
+      })
+      .catch(err => console.log(err));
   return (
     <>
       <input type="email" onChange={e => setEmail(e.target.value)} />
