@@ -1,10 +1,9 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :update, :destroy]
-
+  load_and_authorize_resource
   # GET /articles
   def index
     @articles = Article.all
-
     render json: @articles
   end
 
@@ -16,7 +15,6 @@ class ArticlesController < ApplicationController
   # POST /articles
   def create
     @article = Article.new(article_params)
-
     if @article.save
       render json: @article, status: :created, location: @article
     else
@@ -26,7 +24,7 @@ class ArticlesController < ApplicationController
 
   # PATCH/PUT /articles/1
   def update
-    if @article.update(article_params)
+    if @article.update(article_params, @current_user)
       render json: @article
     else
       render json: @article.errors, status: :unprocessable_entity
