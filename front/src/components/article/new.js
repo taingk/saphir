@@ -9,7 +9,8 @@ const NewArticle = ({ history }) => {
   const add = () =>
     articleApi
       .post({ title, content })
-      .then(({ data }) => history.push(`/show/article/${data.id}`));
+      .then(({ data }) => history.push(`/show/article/${data.id}`))
+      .catch(err => console.log(err));
 
   return (
     <>

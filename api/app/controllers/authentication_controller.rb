@@ -1,6 +1,8 @@
 class AuthenticationController < ApplicationController
     skip_before_action :authenticate_request
-   
+    skip_authorization_check
+    
+    #POST /authenticate
     def authenticate
       command = AuthenticateUser.call(params[:email], params[:password])
    
@@ -10,4 +12,4 @@ class AuthenticationController < ApplicationController
         render json: { error: command.errors }, status: :unauthorized
       end
     end
-    end
+end

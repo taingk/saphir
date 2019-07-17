@@ -1,7 +1,7 @@
 import React, { createContext } from 'react';
 import PropTypes from 'prop-types';
 
-export const Context = createContext({});
+
 
 const publicActions = (provider, actions) =>
   actions.reduce(
@@ -37,4 +37,5 @@ Provider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
+export const Context = createContext({});
 export default Provider;
