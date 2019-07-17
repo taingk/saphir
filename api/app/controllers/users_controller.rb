@@ -42,6 +42,18 @@ class UsersController < ApplicationController
     @user.destroy
   end
 
+  # GET /upgrade/1
+  def upgrade
+    @user.remove_role :user
+    @user.add_role :admin
+  end
+
+#
+  def downgrade
+    @user.remove_role :admin
+    @user.add_role :user
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

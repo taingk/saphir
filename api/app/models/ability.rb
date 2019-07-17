@@ -15,6 +15,7 @@ class Ability
       # can [:update, :destroy], User, :id user.id
     else
       can :read, :all
+      can :read, Article
       can :create, User
     end
   end
