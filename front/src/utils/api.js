@@ -1,7 +1,12 @@
 import axios from 'axios';
 
-export default axios.create({
+let options = {
   baseURL: 'http://localhost:3000/',
   responseType: 'json',
-  headers: {'Authorization': localStorage.getItem('jwt')},
-});
+};
+
+if (localStorage.getItem('jwt')) {
+  options = { ...options,   headers: {'Authorization': localStorage.getItem('jwt')}}
+}
+
+export default axios.create(options);

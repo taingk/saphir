@@ -12,12 +12,13 @@ class ApplicationController < ActionController::API
     end
     
     private
-    # def current_user
-    #   @token = request.headers[:Authorization]
-    #   JsonWebToken.decode(@token) [:user_id] if @token
-    # end
     def current_user
-      @current_user ||= User.find(session[:user_id]) if session[:user_id]
+      @token = request.headers[:Authorization]
+      if @token
+        userid = JsonWebToken.decode(@token) [:user_id]
+        User.find(userid)
+      end
+
     end
 
 end
