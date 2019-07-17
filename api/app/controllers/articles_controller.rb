@@ -1,6 +1,9 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :update, :destroy]
   load_and_authorize_resource
+  skip_before_action :authenticate_request
+  skip_authorization_check :only => [:index, :show]
+  
   # GET /articles
   def index
     @articles = Article.all
